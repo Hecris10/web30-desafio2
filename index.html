@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <header>
+      <h1>Cadastro</h1>
+    </header>
+    <main>
+      <form>
+        Nome: <input title="nome" name="nome" id="name" type="text" />
+        <br />
+        <br />
+        Email: <input title="nome" name="nome" id="email" type="text" />
+        <br />
+        <br />
+        Data de Nascimento:
+        <input title="data" name="data" id="date" type="date" />
+        <br />
+        <br />
+        Sexo:
+        <select title="sexo" id="gender">
+          <option value="0">Selecione</option>
+          <option value="1">Masculino</option>
+          <option value="2">Feminino</option>
+        </select>
+        <br />
+        <br />
+        Endereço:
+        <input title="address" name="address" id="address" type="text" />
+        <br />
+        <br />
+        Login: <input title="login" type="text" id="login" name="loging" />
+        <br />
+        <br />
+        Password:
+        <input
+          title="login"
+          id="password"
+          type="password"
+          maxlength="230"
+          name="loging"
+        />
+        <br />
+        <br />
+        <button onclick="cadastrar()" type="button">Cadastrar</button>
+      </form>
+      <br />
+      <br />
+      <div id="users">
+        <h2>Usuários</h2>
+        <div id="users-list"></div>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
