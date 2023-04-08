@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+  </head>
+  <body onload="getUsers()">
+    <header>
+      <nav>
+        <fieldset>
+          <legend>Menu</legend>
+          <ul>
+            <li><a href="/">Cadastro</a></li>
+            <li><a href=".index.html">Usuários</a></li>
+          </ul>
+        </fieldset>
+      </nav>
+    </header>
+    <main>
+      <fieldset>
+        <legend>Usuários Cadastrados</legend>
+        <table id="users-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Data de Nascimento</th>
+              <th>Sexo</th>
+            </tr>
+          </thead>
+          <tbody id="users-table-body">
+            <tr>
+              <td><p id="loading-message">Carregando...</p></td>
+            </tr>
+          </tbody>
+          <!-- <tbody id="tableBody"></tbody> -->
+        </table>
+      </fieldset>
+      <button onclick="clearUsers()" type="reset">Clean</button>
+    </main>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
