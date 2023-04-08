@@ -1,8 +1,15 @@
-const users = [];
-
 const cadastrar = () => {
-  const nome = document.getElementById("name");
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  if (!usuarios) {
+    usuarios = [];
+  }
   const email = document.getElementById("email");
+  if (checkUser(usuarios, email.value)) {
+    alert("Email já cadastrado");
+    return;
+  }
+
+  const nome = document.getElementById("name");
   const date = document.getElementById("date");
   const gender = document.getElementById("gender");
   const address = document.getElementById("address");
@@ -20,11 +27,10 @@ const cadastrar = () => {
     password: password.value,
   };
 
-  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-  users.push(usuario);
-  addUsers(usuario);
+  usuarios.push(usuario);
+  console.log(usuarios);
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
-  console.log("Users:", users);
+
   nome.value = "";
   email.value = "";
   senha.value = "";
@@ -33,14 +39,17 @@ const cadastrar = () => {
   address.value = "";
   login.value = "";
   password.value = "";
+
+  alert("Usuário cadastrado com sucesso!!!");
+  return;
 };
 
-const addUsers = (usuario) => {
-  const user = usuario.nome + " " + usuario.email + " " + usuario.date;
-  const list = document.getElementById("users-list");
-  const text = document.createTextNode(user);
-  const userDiv = document.createElement("div");
-  userDiv.appendChild(text);
-  list.appendChild(userDiv);
-  alert("Usuário cadastrado com sucesso!");
+const checkUser = (usuarios, newUserEmail) => {
+  console.log(usuarios);
+  if (usuarios) {
+    if (usuarios.find((u) => u.email === newUserEmail)) {
+      return true;
+    }
+    return false;
+  }
 };

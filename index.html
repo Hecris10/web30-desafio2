@@ -8,53 +8,71 @@
   </head>
   <body>
     <header>
-      <h1>Cadastro</h1>
+      <nav>
+        <fieldset>
+          <legend>Menu</legend>
+          <ul>
+            <li><a href="./index.html">Cadastro</a></li>
+            <li><a href="./users/index.html">Usuários</a></li>
+          </ul>
+        </fieldset>
+      </nav>
     </header>
     <main>
       <form>
-        Nome: <input title="nome" name="nome" id="name" type="text" />
-        <br />
-        <br />
-        Email: <input title="nome" name="nome" id="email" type="text" />
-        <br />
-        <br />
-        Data de Nascimento:
-        <input title="data" name="data" id="date" type="date" />
-        <br />
-        <br />
-        Sexo:
-        <select title="sexo" id="gender">
-          <option value="0">Selecione</option>
-          <option value="1">Masculino</option>
-          <option value="2">Feminino</option>
-        </select>
-        <br />
-        <br />
-        Endereço:
-        <input title="address" name="address" id="address" type="text" />
-        <br />
-        <br />
-        Login: <input title="login" type="text" id="login" name="loging" />
-        <br />
-        <br />
-        Password:
-        <input
-          title="login"
-          id="password"
-          type="password"
-          maxlength="230"
-          name="loging"
-        />
-        <br />
-        <br />
-        <button onclick="cadastrar()" type="button">Cadastrar</button>
+        <fieldset>
+          <legend>Cadastro</legend>
+          Nome:
+          <input required title="nome" name="nome" id="name" type="text" />
+          <br />
+          <br />
+          Email:
+          <input required title="nome" name="nome" id="email" type="text" />
+          <br />
+          <br />
+          Data de Nascimento:
+          <input required title="data" name="data" id="date" type="date" />
+          <br />
+          <br />
+          Sexo:
+          <select required title="sexo" id="gender">
+            <option value="0">Selecione</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+          </select>
+          <br />
+          <br />
+          Endereço:
+          <input
+            required
+            title="address"
+            name="address"
+            id="address"
+            type="text"
+          />
+          <br />
+          <br />
+          Login:
+          <input required title="login" type="text" id="login" name="loging" />
+          <br />
+          <br />
+          Password:
+          <input
+            required
+            title="login"
+            id="password"
+            type="password"
+            maxlength="230"
+            name="loging"
+          />
+          <br />
+          <br />
+
+          <button onclick="cadastrar()" type="button">Cadastrar</button>
+        </fieldset>
       </form>
       <br />
       <br />
-      <div id="users">
-        <h2>Usuários</h2>
-        <div id="users-list"></div>
-      </div>
     </main>
 
     <script src="./script.js"></script>
